@@ -79,7 +79,7 @@ if(direction === 'left') {
                 //else if (shelterAction === 'Jungle') 
                     
             }
-            else if (action === 'Explore')
+            // else if (action === 'Explore')
                 
                 
         } else
