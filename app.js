@@ -48,13 +48,40 @@ if(direction === 'left') {
             //     console.log('Health: ' + x);
             // }
 
-            const action = prompt('What do you want to do to survive? Fish, Find shelter, ');
-            if (action === "fish") {
+            const action = prompt('What do you want to do to survive? Fish, Find shelter, Explore');
+            if (action === "Fish") {
                 const hours = prompt('You find a nearby pond and construct a basic fishing rod and spear. How many hours do you want to spend fishing? ');
+                let fishCaught = 0;
                 for(i = 0; i < hours; i++) {
-                    
+                    food -= 5;
+                    health -= 2;
+                    water -= 10;
+                    fishCaught += 1;
                 }
+                console.log('You caught ' + fishCaught + ' fish.');  
+                food += (fishCaught * 5);
+                if (food > 100) 
+                    food = 100;
+                
+            } else if (action === 'Find Shelter') {
+                console.log('You move more inland to look for shelter.');
+                const shelterAction = prompt('Which landmark do you follow? \n Mountains, Jungle, Creek: ');
+                if (shelterAction === 'Mountains') {
+                    console.log('You find a cave! Growling within reveals a large grizzly.')
+                    const caveAction = prompt('What do you do? Bear hug, run, try to reason with it.')
+                    if (caveAction === 'Bear hug') 
+                        console.log('You were success and hugged the bear. You died.')
+                    else if (caveAction === 'run')
+                        console.log('The bear hunts you down. You died.')
+                    else if (caveAction === 'try to reason with it')
+                        console.log('You yell at the bear to be quiet and leave. The bear seems to understand and looks shocked. It complies and you sleep peacefully for the night.')
+                }
+                //else if (shelterAction === 'Jungle') 
+                    
             }
+            else if (action === 'Explore') {
+                
+                
         } else
             console.log('The stewardess throws the drink at you and you begin to feel queasy. You pass out and die of poisoning.');
     }
