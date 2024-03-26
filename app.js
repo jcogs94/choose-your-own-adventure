@@ -79,10 +79,12 @@ if(direction === 'left') {
                 //else if (shelterAction === 'Jungle') 
                     
             }
-            else if (action === 'Explore') {
+            else if (action === 'Explore')
                 
                 
         } else
             console.log('The stewardess throws the drink at you and you begin to feel queasy. You pass out and die of poisoning.');
     }
+} else {
+    console.log('Wrong');
 }
